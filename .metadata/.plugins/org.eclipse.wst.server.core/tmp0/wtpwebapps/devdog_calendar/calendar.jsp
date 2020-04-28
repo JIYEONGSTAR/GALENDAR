@@ -1,97 +1,45 @@
-<%@page import="java.util.Calendar"%>
-
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-
-	pageEncoding="EUC-KR"%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="devdog_calendar.*" %>
+<!DOCTYPE html>
 <html>
-
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-
-<title>Insert title here</title>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>todaycalendar</title>
+    <style>
+        table { border-collapse: collapse; }
+        td { border: 1px solid gray; width: 120px; height: 120px; vertical-align: top; }
+        th { background-color: #dddddd; border: 1px solid gray; height: 30px; }
+        td:nth-child(1), th:nth-child(1) { color: red; }
+        span.green {  font-size: 9pt; color: green; }
+        span.gray {  font-size: 9pt; color: gray; }
+        td:hover { background-color: #ffd; cursor: pointer; }
+    </style>
 </head>
-
 <body>
-
-	<%
-
-		Calendar tDay = Calendar.getInstance();
-
-
-
-		int y = tDay.get(Calendar.YEAR);
-
-		int m = tDay.get(Calendar.MONTH);
-
-		int d = tDay.get(Calendar.DATE);
-
-
-
-		Calendar dSet = Calendar.getInstance();
-
-		dSet.set(y, m, 1);
-
-		int yo = dSet.get(Calendar.DAY_OF_WEEK);
-
-
-
-		int last_day = tDay.getActualMaximum(Calendar.DATE);
-
-	%>
-
-	<table border="1">
-
-		<tr>
-
-			<td align="center"colspan="7"><%=y%>��<%=(m+1)%>�� �޷�</td>
-
-		</tr>
-
-		<tr>
-
-			<%
-
-				String[] a = { "sun", "mon", "tue", "wed", "thu", "fri", "sat" };
-
-				for (int i = 0; i < 7; i++) {%>
-
-			<td width="35"><%=a[i]%></td>
-
-			<%}%>
-
-		</tr>
-
-		<tr>
-
-			<%for (int k = 1; k < yo; k++) {%>
-
-			<td></td>
-
-			<%}%>
-
-			<%for (int j = 1; j <= last_day; j++) {%>
-
-			<td><%=j%>
-
-				<%if ((yo+j-1) % 7 == 0) {%>
-
-				</td></tr><tr>
-
-			<%}}for(int e=1;e<(7-yo);e++){%>
-
-			<td></td>
-
-			<%} %>
-
-		</tr>
-
-	</table>
-
+    <h1>지금 년도</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+            </tr>
+        </thead>
+        <tbody>
+        		<% int day=1; %>
+        			<tr>
+        			<% for(int j=1;j<calendar1.startDay();j++){ %>
+        				<td> </td>
+        			<%}%>
+        			<% for(int j=calendar1.startDay();j<=7;j++,day++){%>
+        				<td><%=day %></td>
+        			<%}%>     			
+        </tbody>
+    </table>    
 </body>
-
 </html>

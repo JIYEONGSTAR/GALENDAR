@@ -1,3 +1,5 @@
 INDEX VERSION 1.131
 C:\Users\JIYEONG\Desktop\2020목요미식회\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\419900244.index
 \devdog_calendar\src
+C:\Users\JIYEONG\Desktop\GALENDAR\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\419900244.index
+\devdog_calendar\src
