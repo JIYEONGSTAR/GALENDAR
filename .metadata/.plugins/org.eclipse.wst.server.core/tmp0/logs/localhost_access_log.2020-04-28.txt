@@ -32,3 +32,5 @@
 0:0:0:0:0:0:0:1 - - [28/Apr/2020:18:39:06 +0900] "GET /devdog_calendar/calendar.jsp HTTP/1.1" 200 1322
 0:0:0:0:0:0:0:1 - - [28/Apr/2020:18:39:55 +0900] "GET /devdog_calendar/calendar.jsp HTTP/1.1" 200 1359
 0:0:0:0:0:0:0:1 - - [28/Apr/2020:18:55:52 +0900] "GET /devdog_calendar/calendar.jsp HTTP/1.1" 200 2589
+127.0.0.1 - - [28/Apr/2020:18:57:58 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [28/Apr/2020:18:58:03 +0900] "GET /devdog_calendar/calendar.jsp HTTP/1.1" 200 1350

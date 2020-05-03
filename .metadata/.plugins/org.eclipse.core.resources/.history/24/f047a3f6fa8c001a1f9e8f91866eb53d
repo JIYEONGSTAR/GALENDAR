@@ -1,0 +1,24 @@
+package devdog_calendar;
+
+public class calendar2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int day=1;
+		for(int i=0;i<calendar1.lastDate();i++) {
+			for(int k=0;k<7;k++) {
+				for(int j=1;j<calendar1.startDay();j++) {
+					System.out.print(" ");
+				}
+				for(int j=calendar1.startDay();j<=7;j++,day++) {
+					System.out.print(day);
+				}
+			}
+			System.out.print(day);
+			day++;
+			if(day+calendar1.startDay()-1==0)
+				System.out.println("");
+	}
+
+}
+}
