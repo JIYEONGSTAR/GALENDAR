@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="devdog_calendar.*"%>
+<%@ page import="devdog_calendar.*,java.util.Calendar"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,20 +60,24 @@ td:hover {
 		</thead>
 		<tbody>
 			<tr>
+				<%
+				Calendar cr = Calendar.getInstance();
+				int month = cr.get(Calendar.MONTH);
+				%>
 				<%int count=0; %>
 				<%
-					for (int i=1;i<calendar1.startDay();i++) {
+					for (int i=1;i<calendar1.startDay(month);i++) {
 	        			count++;
         		%>
 				<td>&nbsp;</td>
 				<%
         			}
-        			for(int day=1;day<=calendar1.lastDate();day++){
+        			for(int day=1;day<=calendar1.lastDate(month);day++){
         				count++;
         		%>
 				<td><%= day %></td>
 				<%
-        			if(count%7==0&&day<calendar1.lastDate()){
+        			if(count%7==0&&day<calendar1.lastDate(month)){
         		%>
 			</tr>
 			<tr>
