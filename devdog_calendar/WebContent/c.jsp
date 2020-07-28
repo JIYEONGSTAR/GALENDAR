@@ -94,9 +94,8 @@ int count=0;
 	<form method="post" action="c.jsp" name="change">
 	<table>
 	<tr>
-   <td width="140" align="right"><input type="button" value="◁" onClick="monthDown(this.form)"></td>
-      <td width="120" align="center">
-      <select name="year" onchange="selectCheck(this.form)">
+   <td width="140" align="right"><input type="button" value="◁" onClick="monthDown(this.form)" ></td>
+       <select name="year" onchange="selectCheck(this.form)">
       <%
       for(int i=year-10;i<year+10;i++){
        String selected = (i == year)?"selected":"";
@@ -104,16 +103,14 @@ int count=0;
          out.print("<option value="+i+" "+selected+" style=background:"+color+">"+i+"</option>");       
       }
       %>
-      </select>
       <select name="month" onchange="selectCheck(this.form)">
       <%
       for(int i=1;i<=12;i++){
        String selected = (i == month+1)?"selected":"";
-       String color = (i == month+1)?"#CCCCCC":"#FFFFFF";
-         out.print("<option value="+i+" "+selected+" style=background:"+color+">"+i+"</option>");       
+         out.print("<option value="+i+" "+selected+">"+i+"</option>");       
       }
       %>
-      </select></td>
+      </select>
       <td width="140"><input type="button" value="▷" onClick="monthUp(this.form)"></td>
     </tr>
     
