@@ -13,12 +13,62 @@ List <Member> list = MemberDAO.findAll();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-      body { font-family: 굴림체; }
-      thead th { background-color: #eee; }
-      table.table { width: 700px; }
+  @font-face { font-family: 'Binggrae-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+table {
+   border-collapse: collapse;
+   text-align: center;
+   margin: auto;
+   font-family: 'Binggrae-Bold';
+}
+ body{
+ padding: 50px;
+  font-family: 'Binggrae-Bold';
+ }
+ th {
+   background-color: #dddddd;
+   border: 1px solid gray;
+   height: 30px;
+   text-align:center;
+}
+.top_bar {
+   position: fixed;
+   top: 0;
+   display: flex;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   background-color: white;
+   list-style-type: none;
+}
+
+.top_bar_menu {
+   padding: 15px;
+}
+
+.top_bar_menu a {
+   text-align: center;
+   text-decoration: none;
+   color: black;
+   font-size: 20px;
+    font-family: 'Binggrae-Bold';
+}
+
+.top_bar_menu a:hover {
+   color: black;
+}
+h1{
+text-align:center;}
   </style>
 </head>
 <body>
+<header>
+   <nav>
+      <ul class="top_bar">
+         <li class="top_bar_menu"><a href="c.jsp" target="_self">달력</a></li>
+      </ul>
+   </nav>
+</header>
+<h1> 멤버리스트</h1>
 <div class="container">
 <table class="table table-bordered table-condensed">
     <thead>
